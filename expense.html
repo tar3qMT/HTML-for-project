@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+
+        <h3>Enter a Recurring Bill</h3>
+        <form action="bill.php" method="POST">
+            <label for="bill-name">Bill Name:</label>
+            <input type="text" id="bill-name" name="bill-name" required>
+            <label for="bill-amount">Amount:</label>
+            <input type="number" id="bill-amount" name="bill-amount" step="0.01" required>
+            <label for="bill-frequency">Frequency:</label>
+            <select id="bill-frequency" name="bill-frequency">
+                <option value="monthly">Monthly</option>
+                <option value="weekly">Weekly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+            <button type="submit">Add Bill</button>
+        </form>
+
+        <hr>
+
+        <h3>Enter a One-Time Expense</h3>
+        <form action="expense-entry.php" method="POST">
+            <label for="expense-name">Expense Name:</label>
+            <input type="text" id="expense-name" name="expense-name" required>
+            <label for="expense-amount">Amount:</label>
+            <input type="number" id="expense-amount" name="expense-amount" step="0.01" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <a href="home.html">Back to Dashboard</a>
+    </div>
+</body>
+</html>
