@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: finalprojects
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"  # MySQL's default port
+    volumes:
+      - db_data:/var/lib/mysql  # Docker will store the MySQL data in this volume
+
+  web:
+    image: php:7.4-apache
+    container_name: php-web
+    volumes:
+      - ./website:/var/www/html  # Map your website folder to the Apache web server's root directory
+    ports:
+      - "8080:80"  # Web server on port 8080
+    depends_on:
+      - db
+
+volumes:
+  db_data:  # This volume is used to persist MySQL data
