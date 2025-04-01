@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+
+        <h3>Enter Your Income</h3>
+        <form action="income.php" method="POST">
+            <label for="income-source">Income Source:</label>
+            <input type="text" id="income-source" name="income-source" required>
+            <label for="income-amount">Amount:</label>
+            <input type="number" id="income-amount" name="income-amount" step="0.01" required>
+            <button type="submit">Add Income</button>
+        </form>
+
+        <a href="expense.html">Go to Expense Page</a>
+    </div>
+</body>
+</html>
