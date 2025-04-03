@@ -3,32 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Sign Up</title>
+    <title>Budget App - Login</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
-        <form id="login-form" action="login.php" method="POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
-
-        <hr>
-
-        <h2>Sign Up</h2>
-        <form id="signup-form" action="signup.php" method="POST">
-            <label for="signup-email">Email:</label>
-            <input type="email" id="signup-email" name="email" required>
-            <label for="signup-password">Password:</label>
-            <input type="password" id="signup-password" name="password" required>
-            <label for="confirm-password">Confirm Password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-            <button type="submit">Sign Up</button>
-        </form>
+        <div class="card">
+            <h1>Budget App</h1>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="form">
+                <h2>Login</h2>
+                <div class="input-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-blue">Login</button>
+            </form>
+            
+            <div class="divider">or</div>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="form">
+                <h2>Sign Up</h2>
+                <div class="input-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <button type="submit" class="btn-blue">Create Account</button>
+            </form>
+        </div>
     </div>
+
+    <script>
+        // Demo functionality
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            window.location.href = 'home.html'; // Redirect to dashboard
+        });
+        
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Account created (demo) - Redirecting to login');
+            e.target.reset();
+        });
+    </script>
 </body>
 </html>
