@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spending Report</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Back Button -->
+    <a href="home.html" class="btn-back">
+      <i class="material-icons">arrow_back</i> Back to Dashboard
+    </a>
+
+    <!-- Page Header -->
+    <header class="report-header">
+      <h1><i class="material-icons">analytics</i> Spending Report</h1>
+      <div class="time-filter">
+        <select>
+          <option>Last 7 Days</option>
+          <option selected>Last 30 Days</option>
+          <option>Last 3 Months</option>
+          <option>Custom Range</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="summary-label">Total Spent</div>
+        <div class="summary-amount expense">$1,245.60</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Total Income</div>
+        <div class="summary-amount income">$3,200.00</div>
+      </div>
+      <div class="summary-card">
+        <div class="summary-label">Net Savings</div>
+        <div class="summary-amount savings">$1,954.40</div>
+      </div>
+    </div>
+
+    <!-- Transaction History -->
+    <div class="report-card">
+      <h2><i class="material-icons">history</i> Transaction History</h2>
+      
+      <div class="transaction-table">
+        <div class="table-header">
+          <div class="table-cell">Date</div>
+          <div class="table-cell">Description</div>
+          <div class="table-cell">Category</div>
+          <div class="table-cell">Amount</div>
+        </div>
+        
+        <!-- Sample Transactions -->
+        <div class="table-row">
+          <div class="table-cell">May 15, 2023</div>
+          <div class="table-cell">Grocery Store</div>
+          <div class="table-cell">Food</div>
+          <div class="table-cell amount expense">-$85.30</div>
+        </div>
+        
+        <div class="table-row">
+          <div class="table-cell">May 12, 2023</div>
+          <div class="table-cell">Electric Bill</div>
+          <div class="table-cell">Utilities</div>
+          <div class="table-cell amount expense">-$120.50</div>
+        </div>
+        
+        <div class="table-row">
+          <div class="table-cell">May 10, 2023</div>
+          <div class="table-cell">Paycheck</div>
+          <div class="table-cell">Income</div>
+          <div class="table-cell amount income">+$1,200.00</div>
+        </div>
+        
+        <!-- Add more transactions as needed -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
