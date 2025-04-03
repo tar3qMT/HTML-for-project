@@ -11,22 +11,31 @@
     .horizontal-dashboard {
       display: flex;
       gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
     }
     
     .main-content {
       flex: 1;
+      min-width: 0; /* Fixes flexbox overflow issues */
     }
     
     .sidebar {
-      width: 200px;
+      width: 250px;
+      position: sticky;
+      top: 20px;
+      align-self: flex-start;
     }
     
     @media (max-width: 768px) {
       .horizontal-dashboard {
         flex-direction: column;
+        padding: 15px;
       }
       .sidebar {
         width: 100%;
+        position: static;
       }
     }
   </style>
@@ -50,7 +59,7 @@
     <div class="main-content">
       <!-- Horizontal Button Row at Top -->
       <div class="button-row">
-        <a href="user.html" class="btn-blue">
+        <a href="profile.html" class="btn-blue">  <!-- Changed from user.html to profile.html -->
           <i class="material-icons">person</i>
           Profile
         </a>
@@ -62,7 +71,7 @@
           <i class="material-icons">payments</i>
           Expenses
         </a>
-        <a href="reports.html" class="btn-blue">
+        <a href="report.html" class="btn-blue">
           <i class="material-icons">analytics</i>
           Reports
         </a>
@@ -94,5 +103,19 @@
       </div>
     </div>
   </div>
+
+  <!-- Simple link test script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (!confirm(`Test navigation to: ${link.getAttribute('href')}\n\nWould you like to continue?`)) {
+            e.preventDefault();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
